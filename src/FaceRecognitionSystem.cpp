@@ -489,8 +489,10 @@ void FaceRecognitionSystem::startAttendanceSystem() {
     cv::imshow("Attendance System", display_frame);
 
     char key = (char)cv::waitKey(1);
-    if (key == 'q')
+    if (key == 'q') {
+      cv::destroyWindow("Attendance System");
       break;
+    }
   }
 
   saveAttendance();

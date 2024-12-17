@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(AttendanceSystem)
+project(Attendy)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -14,8 +14,8 @@ endif()
 
 include_directories(${OpenCV_INCLUDE_DIRS} ${PROJECT_SOURCE_DIR}/include)
 
-add_executable(attendance_system
+add_executable(attendy
     src/main.cpp
     src/FaceRecognitionSystem.cpp)
 
-target_link_libraries(attendance_system ${OpenCV_LIBS})
+target_link_libraries(attendy ${OpenCV_LIBS})
