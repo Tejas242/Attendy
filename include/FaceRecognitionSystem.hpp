@@ -18,6 +18,12 @@ private:
   std::vector<cv::Mat> training_faces;
   std::vector<int> training_labels;
 
+  // data paths
+  const std::string DATA_PATH = "../data/";
+  const std::string FACES_PATH = DATA_PATH + "faces/";
+  const std::string MODEL_PATH = DATA_PATH + "model.yml";
+  const std::string NAMES_PATH = DATA_PATH + "names.txt";
+
   struct RecognitionHistory {
     std::string name;
     double confidence;
@@ -32,12 +38,19 @@ private:
   void drawUI(cv::Mat &frame, const std::string &current_status);
   void addToHistory(const std::string &name, double confidence);
 
+  bool loadTrainingData();
+  void saveTrainingData();
+  void createDirectories();
+
 public:
   FaceRecognitionSystem();
   ~FaceRecognitionSystem();
 
   bool init();
   void addPerson(const std::string &name);
+  void removePerson(const std::string &name);
+  void listPeople();
   void train();
   void startAttendanceSystem();
+  void showMenu();
 };
