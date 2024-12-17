@@ -8,12 +8,15 @@
 
 <br>
 
+> [NOTE]
+> I am still learning opencv in C++
+
 ## Features
 
 - Real-time face detection and recognition
 - Easy person registration with multiple face angles
 - Simple CLI menu interface(for now)
-- Attendance tracking with timestamps
+- Attendance tracking with timestamps(implemented function but not used)
 - Recent recognition history display
 - CSV export for attendance records(not yet implemented fully)
 
