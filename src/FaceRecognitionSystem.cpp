@@ -165,7 +165,6 @@ void FaceRecognitionSystem::addPerson(const std::string &name) {
       std::ofstream name_file(names_path, std::ios::app);
       name_file << name << std::endl;
 
-      // Train and save model
       train();
 
       fs::path model_path = current_path / ".." / "data" / "model.yml";
@@ -449,10 +448,9 @@ void FaceRecognitionSystem::startAttendanceSystem() {
 
     // Process each detected face
     for (const auto &face_rect : faces) {
-      // Draw rectangle around face
+      // rectangle around face
       cv::rectangle(display_frame, face_rect, cv::Scalar(0, 255, 0), 2);
 
-      // Get and process the face
       cv::Mat face = gray(face_rect);
       cv::resize(face, face, cv::Size(100, 100));
 
@@ -486,10 +484,8 @@ void FaceRecognitionSystem::startAttendanceSystem() {
       current_status = "Waiting for face...";
     }
 
-    // Draw UI elements
     drawUI(display_frame, current_status);
 
-    // Show the frame
     cv::imshow("Attendance System", display_frame);
 
     char key = (char)cv::waitKey(1);

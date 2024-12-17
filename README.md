@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>🎯 FaceTrack Attendance</h1>
+  <h1> 📋Attendy</h1>
   <p>A modern face recognition-based attendance system built with OpenCV and C++</p>
 
   <img src="https://img.shields.io/badge/OpenCV-4.6.0-blue?style=for-the-badge&logo=opencv"/>
@@ -49,5 +49,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
   <br>
-  <p>Built with ❤️ by <a href="https://x.com/the_screenager">@screenager</a></p>
+  <p>Built on 💻 by <a href="https://x.com/the_screenager">@screenager</a></p>
 </div>
