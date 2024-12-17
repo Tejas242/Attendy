@@ -1,4 +1,5 @@
 #pragma once
+#include <chrono>
 #include <map>
 #include <opencv2/face.hpp>
 #include <opencv2/opencv.hpp>
@@ -17,8 +18,19 @@ private:
   std::vector<cv::Mat> training_faces;
   std::vector<int> training_labels;
 
+  struct RecognitionHistory {
+    std::string name;
+    double confidence;
+    std::chrono::system_clock::time_point timestamp;
+  };
+
+  std::vector<RecognitionHistory> recent_recognitions;
+  const size_t MAX_HISTORY = 5;
+
   cv::Mat detectFace(const cv::Mat &frame);
   void saveAttendance();
+  void drawUI(cv::Mat &frame, const std::string &current_status);
+  void addToHistory(const std::string &name, double confidence);
 
 public:
   FaceRecognitionSystem();

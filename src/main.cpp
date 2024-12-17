@@ -13,8 +13,8 @@ int main() {
   }
 
   std::cout << "Adding People to the system..." << std::endl;
-  system.addPerson("Person1");
-  system.addPerson("Person2");
+  system.addPerson("Tejas");
+  system.addPerson("Harshu");
 
   system.train();
 
